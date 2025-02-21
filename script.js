@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let draggedRow = null;
 
   function dragStart(event, row) {
+    event.preventDefault();  // Prevent text selection
     draggedRow = row;
     event.dataTransfer.effectAllowed = 'move';
     event.dataTransfer.setData('text/html', null);

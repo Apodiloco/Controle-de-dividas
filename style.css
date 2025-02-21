@@ -1,0 +1,147 @@
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 1.3em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+th,
+td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.85em;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+#total-value {
+  font-weight: bold;
+}
+
+#add-debt-button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  display: block;
+  margin: 15px auto;
+}
+
+#add-debt-button:hover {
+  background-color: #449d44;
+}
+
+table input[type="text"],
+table input[type="number"],
+table input[type="date"] {
+  width: 90%;
+  padding: 4px;
+  font-size: 0.8em;
+  box-sizing: border-box;
+}
+
+/* Style for completed rows */
+.completed {
+  background-color: #e0f7e0;
+  text-decoration: line-through;
+}
+
+/* Style for dragging and drag over */
+.debt-row.dragging {
+  opacity: 0.5;
+  /* Reduced opacity during dragging */
+  background-color: #bbdefb;
+  /* Highlight the row being dragged */
+}
+
+.debt-row.drag-over {
+  border-bottom: 2px dashed #007bff;
+  /* Visual cue for drop position */
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.1em;
+  }
+
+  table {
+    font-size: 0.75em;
+  }
+
+  th,
+  td {
+    padding: 5px 6px;
+  }
+
+  #add-debt-button {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  table input[type="text"],
+  table input[type="number"],
+  table input[type="date"] {
+    width: 95%;
+    font-size: 0.75em;
+  }
+}
+
+.drag-handle {
+  cursor: grab;
+  padding-right: 5px;
+  user-select: none;
+  /* Prevent text selection during drag */
+}
+
+.delete-button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.75em;
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+}

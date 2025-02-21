@@ -74,23 +74,18 @@ table input[type="date"] {
   box-sizing: border-box;
 }
 
-/* Style for completed rows */
 .completed {
   background-color: #e0f7e0;
   text-decoration: line-through;
 }
 
-/* Style for dragging and drag over */
 .debt-row.dragging {
   opacity: 0.5;
-  /* Reduced opacity during dragging */
   background-color: #bbdefb;
-  /* Highlight the row being dragged */
 }
 
 .debt-row.drag-over {
   border-bottom: 2px dashed #007bff;
-  /* Visual cue for drop position */
 }
 
 @media (max-width: 600px) {
@@ -129,7 +124,6 @@ table input[type="date"] {
   cursor: grab;
   padding-right: 5px;
   user-select: none;
-  /* Prevent text selection during drag */
 }
 
 .delete-button {

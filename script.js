@@ -78,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
     valueInput.classList.add('debt-value');
     valueInput.value = debt.value;
     valueInput.addEventListener('input', () => {
-      debt.value = parseFloat(valueInput.value) || 0;
+      // Validate value input to ensure it's a valid number
+      const value = parseFloat(valueInput.value);
+      debt.value = isNaN(value) ? 0 : value;
       updateTotal();
       saveDebts();
     });
@@ -89,7 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
     deleteButton.textContent = 'Excluir';
     deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('click', () => {
-      deleteDebtRow(index);
+      if (confirm('Tem certeza de que deseja excluir essa dívida?')) {
+        deleteDebtRow(index);
+      }
     });
     deleteCell.appendChild(deleteButton);
 
@@ -158,14 +162,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function dragEnter(event) {
     event.preventDefault();
     const row = event.target.closest('tr');
-    if (row) {
+    if (row && row !== draggedRow) {
       row.classList.add('drag-over');
     }
   }
 
   function dragLeave(event) {
     const row = event.target.closest('tr');
-    if (row) {
+    if (row && row !== draggedRow) {
       row.classList.remove('drag-over');
     }
   }
